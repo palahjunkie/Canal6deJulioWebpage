@@ -1,0 +1,190 @@
+
+{% load static %}
+
+<main>
+    
+    <section class="section sec3" id="portfolio">
+        <div class="main-title">
+            <h2>Biblioteca <span class="bg-text">Filmografía y Archivo</span></h2>
+        </div>
+        <p class="port-text">
+            En esta sección podrás encontrar <span class="resaltar">material de archivo, filmografía gratuita en youtube y filmografía en renta a través de vimeo.</span>
+        </p>
+        
+        <div class="title-container">
+        <div class="right-about">
+        <div class="about-item">
+            <div class="abt-text">
+                <p class="large-text">Vimeo</p>
+                <p class="small-text">Nuestros estrenos más recientes <br /> en renta</p>
+            
+            </div>
+        </div>
+        </div>
+    </div>
+    
+        <div class="portfolios portfoliosvimeo">
+            {% for project in projects|slice:":4"|dictsortreversed:'year' %}
+            {%if not project.vimeo_link %}
+                    
+            {% else %}
+            <div class="portfolio-item" id="vimeoimg">
+                <div class="image">
+                    <img src="{{project.imageURL}}"  alt="{{project.vimeo_link.title}}">
+                    
+                </div>
+                <div class="hover-item">
+                    <div class="hover-items">
+                       <div class="hover-text">
+                        {{project.title}} <br><br>  Réntala
+                       </div>
+                        <div class="icons">
+                            <a href="{{project.vimeo_link}}" target="_blank" class="icon">
+                                <i class="fa-brands fa-vimeo-v"></i>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            {%endif%}
+            {% endfor %}
+        </div>
+       
+        <div class="title-container">
+            <div class="right-about">
+            <div class="about-item">
+                <div class="abt-text">
+                    <p class="large-text">Youtube</p>
+                    <p class="small-text">Títulos <br /> de libre distribución</p>
+                
+                </div>
+            </div>
+            </div>
+        </div>
+        <div class="portfolios">
+            <div class="portfolio-item">
+                    
+                <iframe width="100%" height="100%"
+src="https://www.youtube.com/embed/HsEnDOHG1sc">
+</iframe>
+            
+            
+            
+        </div>
+                 <div class="portfolio-item">
+                    
+                        <iframe width="100%" height="350px"
+src="https://www.youtube.com/embed/TwughT_vCU8">
+</iframe>
+                    
+                    
+                    
+                </div>
+                <div class="portfolio-item">
+                    
+                    <iframe width="100%" height="100%"
+src="https://www.youtube.com/embed/zgtEiz-S8wc">
+</iframe>
+                
+                
+                
+            </div>
+               
+        </div>
+        <div class="title-container">
+            <div class="right-about">
+            <div class="about-item">
+                <div class="abt-text">
+                    <p class="large-text">Archivo</p>
+                    <p class="small-text">Material<br /> para consulta y venta</p>
+                
+                </div>
+            </div>
+            </div>
+        </div>
+        <div class="portfolios">
+            <div class="portfolio-item"></div>
+        <div class="portfolio-item">
+            <div class="image">
+                <img src="{% static 'archivo.jpg'%}"  alt="">
+            </div>
+            <div class="hover-item">
+                <div class="hover-items">
+                    <h3>Búsqueda</h3>
+                    <div class="icons">
+                        <a href="#" target="_blank" class="icon">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </a>
+                        
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <div class="portfolio-item"></div>
+    </div>
+    <div class="title-container">
+        <div class="right-about">
+        <div class="about-item">
+            <div class="abt-text">
+                <p class="large-text">Filmografía Completa</p>
+                
+                
+            
+            </div>
+        </div>
+        </div>
+    </div>
+    
+        
+           
+                
+        
+        <div class="timeline">
+            {% for project in projects %}
+                <div class="timeline-item">
+                   
+                    <div class="tl-icon">
+                        <i class="fa-solid fa-film"></i>
+                    </div>
+                    
+                    <h5> {{project.title}}<br><span>  {{project.director}}</span><br>
+                        <p class="tl-duration">{{project.year}}</p>
+                        <p class="tl-duration">Duración: {{project.duration}} minutos</p>
+                    </h5>
+                  
+                    
+                    <div class="portfolioscontenido">
+                    <div class="portfoliostl">
+                        <img src="{{project.imageURL}}" alt="">
+                    </div>
+                    <div>
+                          
+                    {%if not project.vimeo_link %}
+                    
+                    {% else %}
+    
+                    
+                    <a href="{{project.vimeo_link}}" target="_blank" >
+                        <h3>Rentar  <i class="icons fa-brands fa-vimeo"></i></h3> 
+                        
+                        
+                    </a>
+                    <br>
+                    <br>
+                    {%endif%}
+                        {{project.description|safe|linebreaks }}
+                       
+                    </div>
+                </div>
+                  
+                   
+                </div>
+                {% endfor %}
+        </div>
+
+       
+    </section>
+
