@@ -24,7 +24,7 @@
     </div>
     
         <div class="portfolios portfoliosvimeo">
-            {% for project in projects|slice:":4"|dictsortreversed:'year' %}
+            {% for project in projects|slice:":3"|dictsortreversed:'year' %}
             {%if not project.vimeo_link %}
                     
             {% else %}
