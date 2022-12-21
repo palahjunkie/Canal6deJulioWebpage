@@ -30,22 +30,23 @@
             </p>
             <br>
            
-            <div class="btn-con">
-                {%if estatus == 'renta'%}
-                <a href="{{header.vimeo_link}}" target="_blank" class="main-btn">
-                    <span class="btn-text bold">Mírala en Vimeo</span>
-                    <span class="btn-icon bold"><i class="fa-brands fa-vimeo"></i></span>
-                </a>
-                 {% else %}
-
-               <a href="{{header.renta_link}}" class="main-btn">
-                    <span class="btn-text bold">Compra tus boletos</span>
-                    <span class="btn-icon bold"><i class="fa-solid fa-ticket"></i></span>
-                </a>
-                {%endif%}
-            </div>
-            {%endfor%} 
+          
+            
             <div class="contact-home">
+                <div class="btn-con">
+                    {%if estatus == 'renta'%}
+                    <a href="{{header.vimeo_link}}" target="_blank" class="main-btn">
+                        <span class="btn-text bold">Mírala en Vimeo</span>
+                        <span class="btn-icon bold"><i class="fa-brands fa-vimeo"></i></span>
+                    </a>
+                     {% else %}
+    
+                   <a href="{{header.renta_link}}" class="main-btn">
+                        <span class="btn-text bold">Compra tus boletos</span>
+                        <span class="btn-icon bold"><i class="fa-solid fa-ticket"></i></span>
+                    </a>
+                    {%endif%}
+                </div>
                 <div class="contact-home-item">
                 <div >
                     <a href="https://www.facebook.com/Canal6deJulioOficial/" target="_blank">
@@ -61,6 +62,7 @@
                         <i class="fab fa-youtube"></i>
                     </a>
                 </div>
+                {%endfor%} 
             </div>
             </div>
             
