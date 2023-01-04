@@ -208,6 +208,13 @@ section {
   color: var(--active);
 }
 
+.resaltar-nobg {
+  font-family: "Alexandria", sans-serif;
+  font-weight: 600;
+  /* background-color: var(--color-resaltado); */
+  color: var(--color-resaltado);
+}
+
 .resaltar-titulo {
   font-family: "Alexandria", sans-serif;
   font-weight: 600;
@@ -1201,7 +1208,7 @@ input[type="submit"]:hover {
   .portfoliostl img {
     width: 225px;
     height: 300px!important;
-    -o-object-fit: cover;
+    object-fit: cover;
     /* object-fit: cover; */
     border-radius: 15px;
 }
